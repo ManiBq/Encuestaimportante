@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Flakosiana</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        h1 {
+            color: #d63384;
+        }
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 200px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Encuesta Flakosiana</h1>
+    <p>¿Quieres ser mi Flakosa Valentine?</p>
+    
+    <img src="tata.jpg" alt="Imagen Tata">
+
+    <div class="buttons">
+        <button id="yes" class="btn">Sí</button>
+        <button id="no" class="btn">No, wakala🤢</button>
+    </div>
+
+    <script>
+        const btnYes = document.getElementById("yes");
+        const btnNo = document.getElementById("no");
+
+        btnYes.addEventListener("mouseover", () => {
+            const maxX = window.innerWidth - btnYes.offsetWidth - 20;
+            const maxY = window.innerHeight - btnYes.offsetHeight - 20;
+
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+
+            btnYes.style.position = "absolute";
+            btnYes.style.left = `${newX}px`;
+            btnYes.style.top = `${newY}px`;
+        });
+
+        btnNo.addEventListener("click", () => {
+            alert("pues no meimporta porketeamo y te toca soportar mwa mwa :3");
+        });
+    </script>
+
+</body>
+</html>
